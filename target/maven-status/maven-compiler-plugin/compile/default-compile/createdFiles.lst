@@ -1,0 +1,4 @@
+com\example\PlanetBook3\controller\dashboardController.class
+com\example\PlanetBook3\controller\clientesController.class
+com\example\PlanetBook3\controller\productosController.class
+com\example\PlanetBook3\controller\ajustesController.class
