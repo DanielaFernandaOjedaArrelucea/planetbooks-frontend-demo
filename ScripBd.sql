@@ -1,8 +1,6 @@
--- 1️⃣ Crear base de datos (si aún no la tienes)
 CREATE DATABASE IF NOT EXISTS books;
 USE books;
 
--- 2️⃣ Crear la tabla
 CREATE TABLE planet_books_inventario (
   id VARCHAR(50),
   examen VARCHAR(255),
@@ -11,6 +9,7 @@ CREATE TABLE planet_books_inventario (
   editorial VARCHAR(255),
   anio INT,
   formato VARCHAR(255),
+  titulo VARCHAR(500),
   descripcion TEXT,
   precio VARCHAR(50)
 );
@@ -31,12 +30,20 @@ CREATE TABLE clientes (
 
 SELECT * FROM planet_books_inventario;
 SHOW TABLES; 
--- 3️⃣ Insertar registros (ejemplos, reemplázalos con los tuyos reales)
+
 INSERT INTO planet_books_inventario
-(id, examen, nivel, tipo_de_material, editorial, anio, formato, descripcion, precio)
+(id, examen, nivel, tipo_de_material, editorial, anio, formato, titulo, precio)
 VALUES
-('1', 'STARTERS', 'Pre A1', 'practice tests', 'Cambridge', 2017, 'PDF MP3', 'Starters Authentic Examination Papers 1 PDF, AK, MP3', 'S/ 10.00'),
-('1', 'STARTERS', 'Pre A1', 'practice tests', 'Cambridge', 2017, 'PDF MP3', 'Starters Authentic Examination Papers 1 PDF, AK, MP3', 'S/ 10.00');
+('1', 'STARTERS', 'Pre A1', 'Practice tests', 'Cambridge', 2017, 'PDF,AK,MP3', 'Starters Authentic Examination Papers 1', 'S/ 10.00'),
+('2', 'STARTERS', 'Pre A1', 'Practice tests', 'Cambridge', 2018, 'PDF,AK,MP3', 'Starters Authentic Examination Papers 2', 'S/ 10.00');
+('3', 'MOVERS', 'A1', 'Practice tests', 'Cambridge', 2017, 'PDF,AK,MP3', 'Movers Authentic Examination Papers 1', 'S/ 12.00');
+('4', 'MOVERS', 'A1', 'Practice tests', 'Cambridge', 2018, 'PDF,AK,MP3', 'Movers Authentic Examination Papers 2', 'S/ 12.00');
+('5', 'FLYERS', 'A2', 'Practice tests', 'Cambridge', 2017, 'PDF,AK,MP3', 'Flyers Authentic Examination Papers 1', 'S/ 15.00');
+('6', 'FLYERS', 'A2', 'Practice tests', 'Cambridge', 2018, 'PDF,AK,MP3', 'Flyers Authentic Examination Papers 2', 'S/ 15.00');
+('7', 'KET', 'A2', 'Practice tests', 'Cambridge', 2024, 'SB,TB,AK,MP3', 'KEY for Schools Trainer 2 Six Practice Tests and Teachers Notes', 'S/ 18.00');
+('8', 'KET', 'A2', 'Practice tests', 'Cambridge', 2019, 'PDF,AK,MP3', 'Succeed in A2 Key 8 Practice Tests', 'S/ 18.00');
+('9', 'PET', 'B1', 'Practice tests', 'Cambridge', 2024, 'SB,TB,AK,MP3', 'PET for Schools Trainer 2 Six Practice Tests and Teachers Notes', 'S/ 18.00');
+('10', 'PET', 'B1', 'Practice tests', 'Cambridge', 2019, 'PDF,AK,MP3', 'Succeed in B1 PET 8 Practice Tests', 'S/ 18.00');
 
 INSERT INTO clientes
 (nombre, apellido_paterno, apellido_materno, edad, usuario, correo, pais, fecha_registro, compras, sesiones, activo)
