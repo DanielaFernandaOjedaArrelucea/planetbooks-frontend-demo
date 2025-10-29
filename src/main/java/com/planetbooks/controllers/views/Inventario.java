@@ -20,6 +20,7 @@ public class Inventario {
     private String editorial;
     private int anio;
     private String formato;
+    private String titulo;
     private String descripcion;
     private String precio;
 }
