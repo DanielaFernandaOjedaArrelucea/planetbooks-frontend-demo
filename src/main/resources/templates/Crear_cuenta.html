@@ -15,44 +15,52 @@
   <div class="card shadow-lg p-4" style="width: 28rem;">
     <h4 class="fw-bold text-center mb-3">Crear una cuenta</h4>
     
-    <form th:action="@{/clientes/registrar}" th:object="${cliente}" method="post">
+    <form th:action="@{/clientes/registrar}" th:object="${cliente}" method="post" novalidate>
     <div class="mb-3">
         <label class="form-label">Correo electrónico</label>
         <input type="email" th:field="*{correo}" class="form-control" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></div>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Contraseña</label>
+        <label class="form-label">Contraseña (Usuario)</label>
         <input type="password" th:field="*{usuario}" class="form-control" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('usuario')}" th:errors="*{usuario}"></div>
     </div>
 
     <div class="mb-3">
         <label class="form-label">Nombre</label>
         <input type="text" th:field="*{nombre}" class="form-control" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
     </div>
 
     <div class="mb-3">
         <label class="form-label">Apellido Paterno</label>
         <input type="text" th:field="*{apellido_paterno}" class="form-control" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('apellido_paterno')}" th:errors="*{apellido_paterno}"></div>
     </div>
 
     <div class="mb-3">
         <label class="form-label">Apellido Materno</label>
         <input type="text" th:field="*{apellido_materno}" class="form-control" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('apellido_materno')}" th:errors="*{apellido_materno}"></div>
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Edad</label>
-      <input type="number" th:field="*{edad}" class="form-control" min="18" required>
+        <label class="form-label">Edad</label>
+        <input type="number" th:field="*{edad}" class="form-control" min="18" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}"></div>
     </div>
 
     <div class="mb-3">
         <label class="form-label">País</label>
         <input type="text" th:field="*{pais}" class="form-control" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('pais')}" th:errors="*{pais}"></div>
     </div>
 
     <button type="submit" class="btn btn-success w-100">Registrarse</button>
 </form>
+
 <br>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" style="background-color: rgb(178, 180, 178);" required>

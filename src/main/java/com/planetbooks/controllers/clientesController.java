@@ -98,8 +98,12 @@ public class clientesController {
     }
 
     @PostMapping("/clientes/registrar")
-    public String registrarCliente(@ModelAttribute Cliente cliente) {
-        // Inicializar valores por defecto
+    public String registrarCliente(@Valid @ModelAttribute Cliente cliente, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+        // Si hay errores de validación, volvemos al formulario
+        return "Crear_cuenta";
+    }
+    // Inicializar valores por defecto
         cliente.setActivo(true);
         cliente.setCompras(0);
         cliente.setSesiones(0);
